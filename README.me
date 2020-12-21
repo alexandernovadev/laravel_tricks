@@ -1,0 +1,31 @@
+PROCFILE PARA EL FORBIDEN 
+ echo web: vendor/bin/heroku-php-apache2 public/ > Procfile
+
+CORRER UN SEMILLERO
+php artisan db:seed --class=UsersTableSeeder
+
+GENERAR LLAVE
+ php artisan key:generate  
+
+CORRER UNA MIGRACION
+php artisan migrate
+
+CREAR UNA SEMILLA 
+ php artisan make:seeder UsersTableSeeder  
+
+CREAR UNA TABLA
+php artisan make:migration create_comments_table  
+
+AGREGAR UNA COLMUNA
+ php artisan make:migration add_fields_to_likes  
+
+PARA COORER COMUANDO EN HEROKU
+1. heroku login
+2. heroku run php artisan migrate ...
+3- heroku bash (terminal del server)
+
+LA LLAVE PUBLICA
+'key' => env('APP_KEY', 'SomeRandomStringSomeRandomString'), config/app
+--  heroku config:set APP_KEY=SomeRandomStringSomeRandomString
+
+
